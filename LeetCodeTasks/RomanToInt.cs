@@ -17,7 +17,7 @@ namespace LeetCodeTasks
             char prev = default;
 
             // Loop through every character and construct the final number somehow
-            // Payy attention to substraction
+            // Pay attention to substraction
             foreach (char c in s)
             {
                 switch (c)
@@ -32,7 +32,7 @@ namespace LeetCodeTasks
                         {
                             // Sub earlier number
                             result -= 1;
-                            // Assign actual meaning
+                            // Assign actual value
                             result += (5 - 1);
                         }
                         else
