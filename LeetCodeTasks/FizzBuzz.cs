@@ -10,28 +10,32 @@ namespace LeetCodeTasks
 
     public class FizzBuzz
     {
-        // Approach 1: Naive Approach If-ElseIf-Else
+        // Approach 2: String Concatenation
         public static IList<string> Solve(int n)
         {
-            List<string> res = new();
+            List<string> res = new(n);
             for (int i = 1; i <= n; ++i)
             {
-                if (i % 3 == 0 && i % 5 == 0)
+                bool by3 = i % 3 == 0;
+                bool by5 = i % 5 == 0;
+
+                string tmp = "";
+
+                if (by3)
                 {
-                    res.Add("FizzBuzz");
+                    tmp += "Fizz";
                 }
-                else if (i % 3 == 0)
+                if (by5)
                 {
-                    res.Add("Fizz");
+                    tmp += "Buzz";
                 }
-                else if (i % 5 == 0)
+
+                if (String.IsNullOrEmpty(tmp))
                 {
-                    res.Add("Buzz");
+                    tmp += i.ToString();
                 }
-                else
-                {
-                    res.Add(i.ToString());
-                }
+
+                res.Add(tmp);
             }
 
             return res;
