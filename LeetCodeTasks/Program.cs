@@ -6,7 +6,12 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(RichestCustomerWealth.Solve(new int[][] { new int[] { 1, 5 }, new int[] { 7,3 }, new int[] { 3, 5 } }));
+            System.Collections.Generic.IList<string> list = FizzBuzz.Solve(15);
+            foreach(var l in list)
+            {
+                Console.WriteLine(l);
+            }
+            Console.WriteLine(FizzBuzz.Solve(3));
         }
     }
 }
