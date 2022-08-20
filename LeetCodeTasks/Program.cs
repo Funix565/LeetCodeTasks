@@ -6,7 +6,9 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(RootEqualsSumOfChildren.Solve(new TreeNode(10, new TreeNode(4), new TreeNode(6))));
+            int[] res = RunningSumOf1dArray.Solve(new int[] { 1, 2, 3, 4 });
+            Array.ForEach(res, Console.WriteLine);
+            Console.WriteLine(RunningSumOf1dArray.Solve(new int[] { 1, 2, 3, 4 }));
         }
     }
 }
