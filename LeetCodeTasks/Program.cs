@@ -6,7 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(AddTwoIntegers.Solve(-10, 4));
+            Console.WriteLine(RootEqualsSumOfChildren.Solve(new TreeNode(10, new TreeNode(4), new TreeNode(6))));
         }
     }
 }
