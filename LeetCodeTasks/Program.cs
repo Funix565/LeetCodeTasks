@@ -6,9 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int[] res = RunningSumOf1dArray.Solve(new int[] { 1, 2, 3, 4 });
-            Array.ForEach(res, Console.WriteLine);
-            Console.WriteLine(RunningSumOf1dArray.Solve(new int[] { 1, 2, 3, 4 }));
+            Console.WriteLine(RichestCustomerWealth.Solve(new int[][] { new int[] { 1, 5 }, new int[] { 7,3 }, new int[] { 3, 5 } }));
         }
     }
 }
