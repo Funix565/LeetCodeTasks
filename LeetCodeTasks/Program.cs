@@ -6,7 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(RomanToInt.Solve("MCMLIII"));
+            Console.WriteLine(AddTwoIntegers.Solve(-10, 4));
         }
     }
 }
