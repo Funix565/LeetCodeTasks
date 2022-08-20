@@ -10,17 +10,15 @@ namespace LeetCodeTasks
 
     public class RunningSumOf1dArray
     {
-        // Approach 1: Using Separate Space
+        // Approach 2: Using Input Array for Output
         public static int[] Solve(int[] nums)
         {
-            int[] result = new int[nums.Length];
-            result[0] = nums[0];
             for (int i = 1; i < nums.Length; ++i)
             {
-                result[i] = result[i - 1] + nums[i];
+                nums[i] += nums[i - 1];
             }
 
-            return result;
+            return nums;
         }
     }
 }
