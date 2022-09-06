@@ -28,19 +28,19 @@ namespace LeetCodeTasks
             }
 
             // Index of the middle node
-            int middle = count / 2 + 1;
+            int middle = count / 2;
             wn = head;
-            count = 1;
+            count = 0;
 
             // Iterate half the number of elements
             while (wn != null)
             {
-                wn = wn.next;
-                ++count;
                 if (count == middle)
                 {
                     break;
                 }
+                wn = wn.next;
+                ++count;
             }
 
             return wn;
