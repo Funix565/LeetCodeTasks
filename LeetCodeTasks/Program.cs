@@ -6,12 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            System.Collections.Generic.IList<string> list = FizzBuzz.Solve(15);
-            foreach(var l in list)
-            {
-                Console.WriteLine(l);
-            }
-            Console.WriteLine(FizzBuzz.Solve(3));
+            Console.WriteLine(ReduceToZero.Solve(123));
         }
     }
 }

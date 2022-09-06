@@ -10,4 +10,5 @@
 | [1672. Richest Customer Wealth](https://leetcode.com/problems/richest-customer-wealth/) | 135 ms | 37.6 MB
 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | 153 ms | 54.2 MB | Naive Approach If-ElseIf-Else
 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | 183 ms | 47.1 MB | String Concatenation
+| [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 33 ms | 25.1 MB
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
