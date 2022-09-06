@@ -6,7 +6,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(ReduceToZero.Solve(123));
+            ListNode ln = new(1);
+            Console.WriteLine(MiddleLinkedList.Solve(ln).val);
         }
     }
 }

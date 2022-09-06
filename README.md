@@ -12,4 +12,5 @@
 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | 183 ms | 47.1 MB | String Concatenation
 | [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 33 ms | 25.1 MB
 | [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 27 ms | 26.7 MB | Using bitwise operations
+| [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 102 ms | 36.5 MB | Find size, iterate half of it
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
