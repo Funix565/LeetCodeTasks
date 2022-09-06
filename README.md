@@ -11,4 +11,5 @@
 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | 153 ms | 54.2 MB | Naive Approach If-ElseIf-Else
 | [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/) | 183 ms | 47.1 MB | String Concatenation
 | [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 33 ms | 25.1 MB
+| [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 27 ms | 26.7 MB | Using bitwise operations
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
