@@ -12,38 +12,21 @@ namespace LeetCodeTasks
     {
         public static ListNode Solve(ListNode head)
         {
-            // Find the number of elements in a list
-            int count = 0;
-            ListNode wn = head;
-            while (wn != null)
+            ListNode middle = head;
+            ListNode end = head;
+
+            // Middle moves by one node.
+            // End moves by two nodes.
+            // Our middle node only moves up whenever the size of the list grows by two nodes.
+            // That's why we need a check for a current node and the next node
+
+            while (end != null && end.next != null)
             {
-                wn = wn.next;
-                ++count;
+                middle = middle.next;
+                end = end.next.next;
             }
 
-            // Special case with one node
-            if (count == 1)
-            {
-                return head;
-            }
-
-            // Index of the middle node
-            int middle = count / 2;
-            wn = head;
-            count = 0;
-
-            // Iterate half the number of elements
-            while (wn != null)
-            {
-                if (count == middle)
-                {
-                    break;
-                }
-                wn = wn.next;
-                ++count;
-            }
-
-            return wn;
+            return middle;
         }
     }
 
