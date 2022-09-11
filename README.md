@@ -14,4 +14,5 @@
 | [1342. Number of Steps to Reduce a Number to Zero](https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/) | 27 ms | 26.7 MB | Using bitwise operations
 | [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 102 ms | 36.5 MB | Find size, iterate half of it
 | [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 121 ms | 36.5 MB | Two pointers. One moves by two nodes
+| [383. Ransom Note](https://leetcode.com/problems/ransom-note/) | 147 ms | 40.4 MB
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)

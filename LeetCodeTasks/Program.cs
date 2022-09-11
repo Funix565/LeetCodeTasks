@@ -6,8 +6,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            ListNode ln = new(1, new(2, new(3, new(4, new(5, new(6))))));
-            Console.WriteLine(MiddleLinkedList.Solve(ln).val);
+            // TODO: An item with the same key has already been added
+            Console.WriteLine(RansomNote.Solve("aab", "baa"));
         }
     }
 }
