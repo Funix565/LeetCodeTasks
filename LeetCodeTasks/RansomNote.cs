@@ -17,41 +17,37 @@ namespace LeetCodeTasks
     {
         public static bool Solve(string ransomNote, string magazine)
         {
-            bool answer = false;
             IDictionary<char, int> magazineLettersUsage = new Dictionary<char, int>();
+
+            // the main condition to perform any calculations
+            if (magazine.Length < ransomNote.Length)
+            {
+                return false;
+            }
 
             foreach (char c in magazine)
             {
                 // anyway adds the element for the first time
-                if (magazineLettersUsage.TryAdd(c, 1))
-                {
-                }
-                else
+                if (magazineLettersUsage.TryAdd(c, 1) == false)
                 {
                     // the element with the given key exists in the dictionary
                     magazineLettersUsage[c]++;
                 }
-                
             }
 
             foreach (char r in ransomNote)
             {
-                int value = 0;
-                if (magazineLettersUsage.TryGetValue(r, out value)
-                    && value > 0)
+                // Act only when letter exists and is present in a dic
+                magazineLettersUsage.TryGetValue(r, out int value);
+                if (value == 0)
                 {
-                    magazineLettersUsage[r]--;
-                    answer = true;
+                    return false;   
                 }
-                else
-                {
-                    answer = false;
-                    break;
-                }
+
+                magazineLettersUsage[r]--;
             }
 
-
-            return answer;
+            return true;
         }
     }
 }
