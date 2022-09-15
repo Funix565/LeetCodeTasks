@@ -10,15 +10,15 @@ namespace LeetCodeTasks
             //Console.WriteLine(
             int[] res = KWeakestRowsInMatrix.Solve(new int[][]
             {
-            new int[] { 1, 1, 0, 0 },
-            new int[] { 1, 1, 1, 0 },
-            new int[] { 1, 0, 0, 0 },
-            new int[] { 1, 0, 0, 0 },
+            new int[] { 1,1,1,1,1,1 },
+            new int[] { 1,1,1,1,1,1 },
+            new int[] { 1,1,1,1,1,1 },
+            //new int[] { 1,0,0,0 },
             //new int[] { 1, 1, 1, 1, 1 }
-            }, 2);
+            }, 1);
 
             Array.ForEach(res, Console.WriteLine);
-                //);
+            //);
         }
     }
 }

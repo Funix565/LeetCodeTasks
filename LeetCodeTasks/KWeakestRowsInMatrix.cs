@@ -15,58 +15,37 @@ namespace LeetCodeTasks
             // We have to return the indices of the k weakest rows, that's why size is k
             int[] result = new int[k];
 
-            // Fill it with -1 for future check
-            int filler = mat.Length + 500;
-            Array.Fill(result, filler);
+            // To keep soldiers:row as in the explanations
+            List<Tuple<int,int>> SoldiersPerRow = new();
 
-            // Global shift for result. Used, when both rows have the same number of soldiers
-            int shift = 0;
-
-            // To track fullness of result
-            int hit = 0;
-
-            for (int r = 0; r < mat.Length; ++r)
+            for (int row = 0; row < mat.Length; ++row)
             {
-                // Calculate the number of soldiers in each row
                 int count = 0;
-                foreach (int n in mat[r])
+                foreach(int n in mat[row])
                 {
-                    if (n == 1)
-                    {
-                        ++count;
-                    }
-                    else
+                    if (n != 1)
                     {
                         break;
                     }
+
+                    ++count;
                 }
 
-                // Should all rows contain at leats one soldier?
-                // Should all rows contain at least one civilian?
-                // shift can't be global?
+                Tuple<int, int> t = new(count, row);
+                SoldiersPerRow.Add(t);
+            }
 
-                // We need count < k because position in result is based on it. Otherwise -- overflow
-                if (count > 0 && count < k)
-                {
-                    // count - 1 because I noticed this pattern.
-                    // the number of soldiers relates to position in 1-based array, that's why -1
-                    if(result[count - 1] == filler)
-                    {
-                        result[count - 1] = r;
-                    }
-                    else
-                    {
-                        // both rows have the same number of soldiers, mainatin result order with shift
-                        result[count - 1 + ++shift] = r;
-                    }
+            // Sort the tuples by number of soldiers, ascending.
+            // If both rows have the same number of soldiers, then sort by row index.
+            // That's how we get the weakest rows in the beginning.
+            SoldiersPerRow.Sort(
+                (x, y) => x.Item1.CompareTo(y.Item1) == 0 ? x.Item2.CompareTo(y.Item2) : x.Item1.CompareTo(y.Item1)
+            );
 
-                    ++hit;
-                    // We can stop here because result is ready.
-                    if (hit == result.Length)
-                    {
-                        break;
-                    }
-                }
+            // No need in full loop, just save the k values
+            for (int i = 0; i < k; ++i)
+            {
+                result[i] = SoldiersPerRow[i].Item2;
             }
 
             return result;
