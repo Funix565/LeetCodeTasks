@@ -15,9 +15,6 @@ namespace LeetCodeTasks
             // We have to return the indices of the k weakest rows, that's why size is k
             int[] result = new int[k];
 
-            // To keep soldiers:row as in the explanations
-            List<Tuple<int,int>> SoldiersPerRow = new();
-
             for (int row = 0; row < mat.Length; ++row)
             {
                 int count = 0;
@@ -31,21 +28,20 @@ namespace LeetCodeTasks
                     ++count;
                 }
 
-                Tuple<int, int> t = new(count, row);
-                SoldiersPerRow.Add(t);
+                // expected rows of 'matrix' to have 2 <= size <= 100
+                // Don't create new DS for the number of soldiers in each row.
+                // Reuse input matrix.
+                mat[row][0] = count;
+                mat[row][1] = row;
             }
 
-            // Sort the tuples by number of soldiers, ascending.
-            // If both rows have the same number of soldiers, then sort by row index.
-            // That's how we get the weakest rows in the beginning.
-            SoldiersPerRow.Sort(
-                (x, y) => x.Item1.CompareTo(y.Item1) == 0 ? x.Item2.CompareTo(y.Item2) : x.Item1.CompareTo(y.Item1)
-            );
+            // Sort matrix by 0-column where we have the soldier count. Here we swap rows
+            var ordered = mat.OrderBy(i => i[0]).ToArray();
 
-            // No need in full loop, just save the k values
+            // Fill result, just save the k values
             for (int i = 0; i < k; ++i)
             {
-                result[i] = SoldiersPerRow[i].Item2;
+                result[i] = ordered[i][1];
             }
 
             return result;

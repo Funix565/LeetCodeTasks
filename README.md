@@ -16,4 +16,5 @@
 | [876. Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/) | 121 ms | 36.5 MB | Two pointers. One moves by two nodes
 | [383. Ransom Note](https://leetcode.com/problems/ransom-note/) | 147 ms | 40.4 MB
 | [1337. The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | 276 ms | 44.7 MB | Using `Tuples<soldiers,row>`
+| [1337. The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | 321 ms | 44.9 MB | Reuse input matrix and sort by 0-column
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/)
