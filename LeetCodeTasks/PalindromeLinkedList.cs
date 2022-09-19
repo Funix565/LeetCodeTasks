@@ -12,31 +12,44 @@ namespace LeetCodeTasks
     {
         public static bool Solve(ListNode head)
         {
-            Stack<int> backwards = new();
-
             ListNode wp = head;
 
-            // We need this loop to fill the Stack
-            while (wp != null)
+            // One node is a palindrome
+            if (wp.next == null)
             {
-                backwards.Push(wp.val);
-                wp = wp.next;
+                return true;
             }
 
-            // Now Stack contains all values of LinkedList but in reverse order
-            // Loop through the LinkedList one more time and compare vals
+            // Move head to the middle
             while (head != null)
             {
-                int val = backwards.Pop();
-                if (val != head.val)
+                int val = GetLastAndRemove(wp);
+
+                if (head.val == val)
+                {
+                    head = head.next;
+                }
+                else
                 {
                     return false;
                 }
-
-                head = head.next;
             }
 
             return true;
+        }
+
+        // Remove last node and move tail in reverse order to the middle
+        private static int GetLastAndRemove(ListNode node)
+        {
+            // Find the penultimate node
+            while (node.next.next != null)
+            {
+                node = node.next;
+            }
+
+            int val = node.next.val;
+            node.next = null;
+            return val;
         }
     }
 }
