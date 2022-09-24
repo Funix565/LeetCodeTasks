@@ -21,6 +21,8 @@ namespace LeetCodeTasks
             // - In the end, dequeue each element and save as answer
             // - Lastly, reverse the answer
 
+            // https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/discuss/1066773/C++-or-Max-Heap-+-Binary-Search-or-O(m*log(max(n-k))-0ms-Beats-100-or-Explanation-(Tips)
+
             // <row_index, Tuple<priority,row_index>>
             PriorityQueue<int, Tuple<int, int>> pq = new(Comparer<Tuple<int, int>>.Create(
                 (x, y) =>
