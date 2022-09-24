@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,37 +14,65 @@ namespace LeetCodeTasks
     {
         public static int[] Solve(int[][] mat, int k)
         {
-            // We have to return the indices of the k weakest rows, that's why size is k
-            int[] result = new int[k];
+            // - Use max-heap (priority queue with reversed IComparer)
+            // - Iterate each row and find the number of soldiers using binary search
+            // - Enqueue {row_index:soldiers} into max-heap. soldiers is Priority
+            // - Maintain the max-heap size to at max k. Otherwise, dequeue
+            // - In the end, dequeue each element and save as answer
+            // - Lastly, reverse the answer
 
-            for (int row = 0; row < mat.Length; ++row)
-            {
-                int count = 0;
-                foreach(int n in mat[row])
+            // <row_index, Tuple<priority,row_index>>
+            PriorityQueue<int, Tuple<int, int>> pq = new(Comparer<Tuple<int, int>>.Create(
+                (x, y) =>
                 {
-                    if (n != 1)
+                    // The number of soldiers in row i is less than the number of soldiers in row j
+                    if (x.Item1.CompareTo(y.Item1) < 0)
                     {
-                        break;
+                        return 1;
+                    }
+                    // Both rows have the same number of soldiers and i < j
+                    else if (x.Item1.CompareTo(y.Item1) == 0 && x.Item2.CompareTo(y.Item2) < 0)
+                    {
+                        return 1;
                     }
 
-                    ++count;
+                    return -1;
+                }));
+
+            for (int i = 0; i < mat.Length; ++i)
+            {
+                int low = 0;
+                int high = mat[i].Length - 1;
+                while (low <= high)
+                {
+                    // IMPORTANT!
+                    int mid = low + (high - low) / 2;
+
+                    if (mat[i][mid] == 0)
+                    {
+                        high = mid - 1;
+                    }
+                    else
+                    {
+                        low = mid + 1;
+                    }
                 }
 
-                // expected rows of 'matrix' to have 2 <= size <= 100
-                // Don't create new DS for the number of soldiers in each row.
-                // Reuse input matrix.
-                mat[row][0] = count;
-                mat[row][1] = row;
+                pq.Enqueue(i, new Tuple<int, int>(low, i));
+                if (pq.Count>k)
+                {
+                    pq.Dequeue();
+                }
             }
 
-            // Sort matrix by 0-column where we have the soldier count. Here we swap rows
-            var ordered = mat.OrderBy(i => i[0]).ToArray();
-
-            // Fill result, just save the k values
-            for (int i = 0; i < k; ++i)
+            int[] result = new int[k];
+            int j = 0;
+            while (pq.Count > 0)
             {
-                result[i] = ordered[i][1];
+                result[j++] = pq.Dequeue();
             }
+
+            Array.Reverse(result);
 
             return result;
         }
