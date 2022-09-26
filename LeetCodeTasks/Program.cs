@@ -6,17 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int[] res = KWeakestRowsInMatrix.Solve(new int[][]
-{
-            new int[] { 1,1 },
-            new int[] { 1,0 },
-            new int[] { 1,0 },
-            new int[] { 1,1 },
-            new int[] { 0,0 },
-            new int[] { 1,1 }
-            }, 1);
-
-            Array.ForEach(res, Console.WriteLine);
+            Console.WriteLine(MaxConsecutiveOnes.Solve(new[] { 1,1,0,1,1,1}));
         }
     }
 }
