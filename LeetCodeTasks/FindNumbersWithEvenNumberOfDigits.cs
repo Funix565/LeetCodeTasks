@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeetCodeTasks
 {
-    // Link: https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3237/
+    // Link: https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
 
     public class FindNumbersWithEvenNumberOfDigits
     {

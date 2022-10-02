@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace LeetCodeTasks
 {
-    // Link: https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3240/
+    // Link: https://leetcode.com/problems/squares-of-a-sorted-array/
 
     public class SquaresOfASortedArray
     {

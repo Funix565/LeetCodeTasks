@@ -19,3 +19,8 @@
 | [1337. The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | 321 ms | 44.9 MB | Reuse input matrix and sort by 0-column
 | [1337. The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/) | 188 ms | 44.6 MB | `PriorityQueue` as max-heap, binary search for number of soldiers, maintain the max-heap size
 | [234. Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/) | 535 ms | 52.1 MB | Used `Stack` thanks to hint in **Related Topics**
+| [485. Max Consecutive Ones](https://leetcode.com/problems/max-consecutive-ones/) | 234 ms | 40.6 MB
+| [1295. Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | 170 ms | 37.7 MB | Find the number of digits with `/` operator
+| [1295. Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | 149 ms | 37.6 MB | Convert a number to a string and find its length
+| [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 340 ms | 48.8 MB | Square each element and sort the result array
+| [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 192 ms | 48.7 MB | An `O(n)` solution with two pointers
