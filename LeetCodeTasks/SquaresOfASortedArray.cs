@@ -13,15 +13,38 @@ namespace LeetCodeTasks
     {
         public static int[] Solve(int[] nums)
         {
-            // Square each element and sort the new array
-            for (int i = 0; i < nums.Length; ++i)
+            // Create the new result array.
+            // Create an end-index for the result array.
+            // Create two indexes -- begin, end -- for the initial array. Because they will have the highest squares
+            // Top loop condition -- end-result index >= 0
+            // Compare absolute values of the begin and end.
+            // If nums[begin] < nums[end]:
+            //      add square of the end element to the result
+            //      decrement end-index
+            //      decrement result array index
+            // Else if nums[begin] >= nums[end]:
+            //      add square of the begin element to the result
+            //      decrement end-index
+            //      decrement result array index
+
+            int[] result = new int[nums.Length];
+            var begin = 0;
+            var end = nums.Length - 1;
+            for (var endResult = result.Length - 1; endResult >= 0; --endResult)
             {
-                nums[i] = nums[i] * nums[i];
+                if (Math.Abs(nums[begin]) < Math.Abs(nums[end]))
+                {
+                    result[endResult] = nums[end] * nums[end];
+                    --end;
+                }
+                else
+                {
+                    result[endResult] = nums[begin] * nums[begin];
+                    ++begin;
+                }
             }
 
-            Array.Sort(nums);
-
-            return nums;
+            return result;
         }
     }
 }
