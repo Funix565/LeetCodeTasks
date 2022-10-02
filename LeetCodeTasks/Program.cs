@@ -6,7 +6,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(MaxConsecutiveOnes.Solve(new[] { 1,1,0,1,1,1}));
+            int[] ar = { 555, 901, 482, 1771};
+            Console.WriteLine(FindNumbersWithEvenNumberOfDigits.Solve(ar));
         }
     }
 }
