@@ -13,15 +13,10 @@ namespace LeetCodeTasks
         public static int Solve(int[] nums)
         {
             int answer = 0;
-            for (int i = 0; i < nums.Length; ++i)
+            for (var i = 0; i < nums.Length; ++i)
             {
-                // Find the number of digits with / operator
-                int digits = 1;
-                while (nums[i] / 10 > 0)
-                {
-                    nums[i] = nums[i] / 10;
-                    ++digits;
-                }
+                // Convert a number to a string to find its length and therefore the nuber of digits
+                var digits = nums[i].ToString().Length;
 
                 // The last bit of an even number is 0
                 if ((digits & 1) == 0)

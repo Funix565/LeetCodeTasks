@@ -6,7 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int[] ar = { 555, 901, 482, 1771};
+            int[] ar = { 12, 345, 2, 6, 7896 };
             Console.WriteLine(FindNumbersWithEvenNumberOfDigits.Solve(ar));
         }
     }
