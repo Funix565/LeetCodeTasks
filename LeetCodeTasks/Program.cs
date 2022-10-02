@@ -6,8 +6,9 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int[] ar = { 12, 345, 2, 6, 7896 };
-            Console.WriteLine(FindNumbersWithEvenNumberOfDigits.Solve(ar));
+            int[] ar = { -4, -1, 0, 3, 10 };
+            //Console.WriteLine(SquaresOfASortedArray.Solve(ar));
+            Array.ForEach(SquaresOfASortedArray.Solve(ar), Console.WriteLine);
         }
     }
 }
