@@ -24,3 +24,4 @@
 | [1295. Find Numbers with Even Number of Digits](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | 149 ms | 37.6 MB | Convert a number to a string and find its length
 | [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 340 ms | 48.8 MB | Square each element and sort the result array
 | [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 192 ms | 48.7 MB | An `O(n)` solution with two pointers
+| [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/) **_JavaScript_** | 65 ms | 44.3 MB | It looks like the Euclidean algorithm
