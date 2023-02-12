@@ -6,9 +6,10 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int[] ar = { -7, -3, 2, 3, 11 };
-            //Console.WriteLine(SquaresOfASortedArray.Solve(ar));
-            Array.ForEach(SquaresOfASortedArray.Solve(ar), Console.WriteLine);
+            string s1 = "hello";
+            string s2 = "ooolleoooleh";
+            var ans = CheckInclusion.Solve(s1, s2);
+            Console.WriteLine(ans);
         }
     }
 }
