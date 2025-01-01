@@ -6,9 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            string s1 = "hello";
-            string s2 = "ooolleoooleh";
-            var ans = CheckInclusion.Solve(s1, s2);
+            var ans = MaxScoreAfterSplittingString.Solve("1111");
             Console.WriteLine(ans);
         }
     }
