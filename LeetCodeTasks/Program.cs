@@ -6,8 +6,11 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            var ans = MaxScoreAfterSplittingString.Solve("1111");
-            Console.WriteLine(ans);
+            var ans = CountVowelStringsInRanges.Solve(["a", "e", "i"], [[0, 2], [0, 1], [2, 2]]);
+            foreach (var s in ans)
+            {
+                Console.WriteLine(s);
+            }
         }
     }
 }

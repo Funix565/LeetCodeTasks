@@ -25,4 +25,5 @@
 | [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 340 ms | 48.8 MB | Square each element and sort the result array
 | [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | 192 ms | 48.7 MB | An `O(n)` solution with two pointers
 | [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/) **_JavaScript_** | 65 ms | 44.3 MB | It looks like the Euclidean algorithm
-| [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) | 1943 ms | 51.5 MB | Approach by trial and error during dubug
+| [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) | 1943 ms | 51.5 MB | Approach by trial and error during debug
+| [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) | 31 ms | 54.4 MB | Brute Force Approach
