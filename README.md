@@ -27,3 +27,4 @@
 | [1071. Greatest Common Divisor of Strings](https://leetcode.com/problems/greatest-common-divisor-of-strings/) **_JavaScript_** | 65 ms | 44.3 MB | It looks like the Euclidean algorithm
 | [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) | 1943 ms | 51.5 MB | Approach by trial and error during debug
 | [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) | 31 ms | 54.4 MB | Brute Force Approach
+| [2559. Count Vowel Strings in Ranges](https://leetcode.com/problems/count-vowel-strings-in-ranges/) | 13 ms | 83.3 MB | Prefix Sum with chat gpt hints, mixed left and right formula
