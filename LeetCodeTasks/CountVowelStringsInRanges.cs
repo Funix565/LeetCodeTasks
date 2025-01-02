@@ -8,22 +8,51 @@ namespace LeetCodeTasks
     {
         public static int[] Solve(string[] words, int[][] queries)
         {
-            HashSet<char> vowels = new HashSet<char>(new char[] { 'a', 'e', 'i', 'o', 'u' });
-
+            HashSet<char> vowels = new HashSet<char>(['a', 'e', 'i', 'o', 'u']);
             List<int> ans = new List<int>();
+            List<int> numberOfStrings = new List<int>(words.Length);
 
-            foreach (int[] pair in queries)
+            // preparation
+            string firstWord = words[0];
+            if (vowels.Contains(firstWord[0]) && vowels.Contains(firstWord[firstWord.Length - 1]))
             {
-                int queryAnswer = 0;
-                for (int i = pair[0]; i <= pair[1]; ++i)
+                numberOfStrings.Add(1);
+            }
+            else
+            {
+                numberOfStrings.Add(0);
+            }
+
+            for (int i = 1; i < words.Length; ++i)
+            {
+                string word = words[i];
+                if (vowels.Contains(word[0]) && vowels.Contains(word[word.Length - 1]))
                 {
-                    string word = words[i];
-                    if (vowels.Contains(word[0]) && vowels.Contains(word[word.Length - 1]))
-                    {
-                        ++queryAnswer;
-                    }
+                    var res = numberOfStrings[i - 1];
+                    numberOfStrings.Add(res + 1);
                 }
-                ans.Add(queryAnswer);
+                else
+                {
+                    var res = numberOfStrings[i - 1];
+                    numberOfStrings.Add(res);
+                }
+            }
+
+            // solution
+            foreach (int[] query in queries)
+            {
+                if (query[0] == 0)
+                {
+                    var exist = numberOfStrings[query[1]];
+                    ans.Add(exist);
+                }
+                else
+                {
+                    var leftResult = numberOfStrings[query[0] - 1];
+                    var rightResult = numberOfStrings[query[1]];
+
+                    ans.Add(rightResult - leftResult);
+                }
             }
 
             return ans.ToArray();
