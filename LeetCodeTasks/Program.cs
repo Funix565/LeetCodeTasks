@@ -6,11 +6,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            var ans = CountVowelStringsInRanges.Solve(["aba", "bcb", "ece", "aa", "e"], [[0, 2], [1, 4], [1, 1]]);
-            foreach (var s in ans)
-            {
-                Console.WriteLine(s);
-            }
+            var result = NumberOfWaysToSplitArray.Solve([2, 3, 1, 0]);
+            Console.WriteLine(result);
         }
     }
 }
