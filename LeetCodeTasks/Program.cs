@@ -6,7 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            var result = NumberOfWaysToSplitArray.Solve([2, 3, 1, 0]);
+            var result = NumberOfWaysToSplitArray.Solve([1]);
             Console.WriteLine(result);
         }
     }

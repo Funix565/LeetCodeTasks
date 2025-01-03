@@ -18,7 +18,7 @@ namespace LeetCodeTasks
             }
 
             // solution
-            int indexSum = 0;
+            long indexSum = 0;
             for (int i = 0; i < nums.Length - 1; ++i)
             {
                 indexSum = indexSum + nums[i];
