@@ -6,8 +6,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            var result = NumberOfWaysToSplitArray.Solve([1]);
-            Console.WriteLine(result);
+            int res = UniqueLength3PalindromicSubsequences.Solve("qqqqqqqq");
+            Console.WriteLine(res);
         }
     }
 }
