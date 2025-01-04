@@ -43,6 +43,8 @@ namespace LeetCodeTasks
                         char[] palindrome = [s[i], s[j + 1], s[i]];
                         palindromes.Add(new string(palindrome));
                     }
+
+                    lettersIndexes[index][0] = lettersIndexes[index][1];
                 }
             }
 

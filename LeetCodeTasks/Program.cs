@@ -6,7 +6,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int res = UniqueLength3PalindromicSubsequences.Solve("qqqqqqqq");
+            int res = UniqueLength3PalindromicSubsequences.Solve("bbcbaba");
             Console.WriteLine(res);
         }
     }
