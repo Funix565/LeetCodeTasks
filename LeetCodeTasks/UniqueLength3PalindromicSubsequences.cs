@@ -32,6 +32,8 @@ namespace LeetCodeTasks
             }
 
             // solution
+            // count palindromes in range for one letter.
+            // duplicates avoided by HashSet.
             HashSet<string> palindromes = new HashSet<string>();
             for (int i = 0; i < s.Length; ++i)
             {
@@ -44,6 +46,7 @@ namespace LeetCodeTasks
                         palindromes.Add(new string(palindrome));
                     }
 
+                    // avoid rechecking same letter again. this will not trigger for loop for range
                     lettersIndexes[index][0] = lettersIndexes[index][1];
                 }
             }
