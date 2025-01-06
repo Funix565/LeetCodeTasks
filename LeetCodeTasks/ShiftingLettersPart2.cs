@@ -1,4 +1,6 @@
-﻿namespace LeetCodeTasks
+﻿using System;
+
+namespace LeetCodeTasks
 {
     public class ShiftingLettersPart2
     {
@@ -6,33 +8,33 @@
         {
             char[] sChar = s.ToCharArray();
 
+            int[] forward = new int[sChar.Length];
+            int[] backward = new int[sChar.Length];
+
             foreach (int[] shift in shifts)
             {
-                for (int i = shift[0]; i <= shift[1]; ++i)
+                if (shift[2] == 0)
                 {
-                    if (shift[2] == 0)
+                    for (int i = shift[0]; i <= shift[1]; ++i)
                     {
-                        if (sChar[i] == 'a')
-                        {
-                            sChar[i] = 'z';
-                        }
-                        else
-                        {
-                            sChar[i] = (char)(sChar[i] - 1);
-                        }
-                    }
-                    else if (shift[2] == 1)
-                    {
-                        if (sChar[i] == 'z')
-                        {
-                            sChar[i] = 'a';
-                        }
-                        else
-                        {
-                            sChar[i] = (char)(sChar[i] + 1);
-                        }
+                        backward[i] = (backward[i] + 1);
                     }
                 }
+                else if (shift[2] == 1)
+                {
+                    for (int i = shift[0]; i <= shift[1]; ++i)
+                    {
+                        forward[i] = (forward[i] + 1);
+                    }
+                }
+            }
+
+            for (int i = 0; i < sChar.Length; ++i)
+            {
+                int netShift = forward[i] - backward[i];
+                netShift = (netShift % 26 + 26) % 26;
+
+                sChar[i] = (char)((sChar[i] - 'a' + netShift) % 26 + 'a');
             }
 
             return new string(sChar);
