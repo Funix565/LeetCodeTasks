@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace LeetCodeTasks
+﻿namespace LeetCodeTasks
 {
+    // Link: https://leetcode.com/problems/shifting-letters-ii/
+
     public class ShiftingLettersPart2
     {
         public static string Solve(string s, int[][] shifts)
