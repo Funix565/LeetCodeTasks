@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCodeTasks
 {
@@ -6,8 +7,11 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            var res = MinNumberOfOperationsToMoveAllBallsToEachBox.Solve("110");
-            Array.ForEach(res, Console.WriteLine);
+            IList<string> res = StringMatchingInArray.Solve(["mass", "as", "glass", "ass", "overmass"]);
+            foreach (var item in res)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
