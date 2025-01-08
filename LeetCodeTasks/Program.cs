@@ -7,11 +7,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            IList<string> res = StringMatchingInArray.Solve(["mass", "as", "glass", "ass", "overmass"]);
-            foreach (var item in res)
-            {
-                Console.WriteLine(item);
-            }
+            int res = CountPrefixAndSuffixPairsI.Solve(["abab", "ab"]);
+            Console.WriteLine(res);
         }
     }
 }
