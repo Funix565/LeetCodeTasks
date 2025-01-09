@@ -7,7 +7,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int res = CountPrefixAndSuffixPairsI.Solve(["abab", "ab"]);
+            int res = CountingWordsWithGivenPrefix.Solve(["leetcode", "win", "loops", "success"], "code");
             Console.WriteLine(res);
         }
     }
