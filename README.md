@@ -28,3 +28,10 @@
 | [567. Permutation in String](https://leetcode.com/problems/permutation-in-string/) | 1943 ms | 51.5 MB | Approach by trial and error during debug
 | [1422. Maximum Score After Splitting a String](https://leetcode.com/problems/maximum-score-after-splitting-a-string/) | 31 ms | 54.4 MB | Brute Force Approach
 | [2559. Count Vowel Strings in Ranges](https://leetcode.com/problems/count-vowel-strings-in-ranges/) | 13 ms | 83.3 MB | Prefix Sum with chat gpt hints, mixed left and right formula
+| [2270. Number of Ways to Split Array](https://leetcode.com/problems/number-of-ways-to-split-array/) | 1 ms | 66.3 MB
+| [1930. Unique Length-3 Palindromic Subsequences](https://leetcode.com/problems/unique-length-3-palindromic-subsequences/) | 521 ms | 60 MB
+| [2381. Shifting Letters II](https://leetcode.com/problems/shifting-letters-ii/) | 2102 ms | 84 MB | Reminded me of Caesar cipher, struggled with backward wrap so that 'a' becomes 'z'
+| [1769. Minimum Number of Operations to Move All Balls to Each Box](https://leetcode.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box/) | 45 ms | 50.6 MB
+| [1408. String Matching in an Array](https://leetcode.com/problems/string-matching-in-an-array/) | 3 ms | 48.5 MB
+| [3042. Count Prefix and Suffix Pairs I](https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/) | 8 ms | 42.9 MB
+| [2185. Counting Words With a Given Prefix](https://leetcode.com/problems/counting-words-with-a-given-prefix/) | 0 ms | 43.4 MB
