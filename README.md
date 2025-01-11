@@ -36,3 +36,4 @@
 | [3042. Count Prefix and Suffix Pairs I](https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/) | 8 ms | 42.9 MB
 | [2185. Counting Words With a Given Prefix](https://leetcode.com/problems/counting-words-with-a-given-prefix/) | 0 ms | 43.4 MB
 | [916. Word Subsets](https://leetcode.com/problems/word-subsets/) | 21 ms | 70.2 MB
+| [1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings/) | 1 ms | 48.3 MB | Solved using LeetCode hints

@@ -8,8 +8,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            IList<string> res = WordSubsets.Solve(["acaac", "cccbb", "aacbb", "caacc", "bcbbb"], ["c", "cc", "b"]);
-            Array.ForEach(res.ToArray(), Console.WriteLine);
+            bool answer = ConstructKPalindromeStrings.Solve("true", 4);
+            Console.WriteLine(answer);
         }
     }
 }
