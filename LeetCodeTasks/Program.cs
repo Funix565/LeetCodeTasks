@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCodeTasks
 {
@@ -7,8 +8,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int res = CountingWordsWithGivenPrefix.Solve(["leetcode", "win", "loops", "success"], "code");
-            Console.WriteLine(res);
+            IList<string> res = WordSubsets.Solve(["acaac", "cccbb", "aacbb", "caacc", "bcbbb"], ["c", "cc", "b"]);
+            Array.ForEach(res.ToArray(), Console.WriteLine);
         }
     }
 }

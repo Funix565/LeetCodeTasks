@@ -35,3 +35,4 @@
 | [1408. String Matching in an Array](https://leetcode.com/problems/string-matching-in-an-array/) | 3 ms | 48.5 MB
 | [3042. Count Prefix and Suffix Pairs I](https://leetcode.com/problems/count-prefix-and-suffix-pairs-i/) | 8 ms | 42.9 MB
 | [2185. Counting Words With a Given Prefix](https://leetcode.com/problems/counting-words-with-a-given-prefix/) | 0 ms | 43.4 MB
+| [916. Word Subsets](https://leetcode.com/problems/word-subsets/) | 21 ms | 70.2 MB
