@@ -26,36 +26,71 @@ namespace LeetCodeTasks
                 return false;
             }
 
-            int balance = 0;
+            int open = 0;
             int unlocked = 0;
+
             for (int i = 0; i < s.Length; ++i)
             {
-                if (s[i] == '(')
+                if (locked[i] == '0')
+                {
+                    ++unlocked;
+                }
+                else if (s[i] == '(')
+                {
+                    ++open;
+                }
+                else if (s[i] == ')')
+                {
+                    if (open > 0)
+                    {
+                        --open;
+                    }
+                    else if (unlocked > 0)
+                    {
+                        --unlocked;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            int balance = 0;
+            for (int i = s.Length - 1; i >= 0; --i)
+            {
+                if (locked[i] == '0')
+                {
+                    --balance;
+                    --unlocked;
+                }
+                else if (s[i] == '(')
                 {
                     ++balance;
+                    --open;
                 }
                 else if (s[i] == ')')
                 {
                     --balance;
                 }
 
-                if (balance < 0 && locked[i] == '0')
+                if (balance > 0)
                 {
-                    ++balance;
-                }
-                else if (balance < 0 && locked[i] == '1' && unlocked > 0)
-                {
-                    --unlocked;
-                    ++balance;
+                    return false;
                 }
 
-                if (locked[i] == '0')
+                if (unlocked == 0 && open == 0)
                 {
-                    ++unlocked;
+                    break;
                 }
             }
 
-            return unlocked >= balance;
+            if (open > 0)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
