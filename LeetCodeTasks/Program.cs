@@ -8,7 +8,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            bool answer = ConstructKPalindromeStrings.Solve("true", 4);
+            bool answer = CheckIfParenthesesStringCanBeValid.Solve("()((()))()()))((())(", "10010101001111010100");
             Console.WriteLine(answer);
         }
     }
