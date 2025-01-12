@@ -26,84 +26,36 @@ namespace LeetCodeTasks
                 return false;
             }
 
-            Stack<char> parentheses = new Stack<char>();
-            bool isValid = false;
+            int balance = 0;
+            int unlocked = 0;
             for (int i = 0; i < s.Length; ++i)
             {
                 if (s[i] == '(')
                 {
-                    parentheses.Push(s[i]);
+                    ++balance;
                 }
                 else if (s[i] == ')')
                 {
-                    if (parentheses.TryPeek(out char item))
-                    {
-                        if (item == '(')
-                        {
-                            parentheses.Pop();
-                            isValid = true;
-                        }
-                    }
-                    else
-                    {
-                        if (s[i] == ')')
-                        {
-                            if (locked[i] == '0')
-                            {
-                                parentheses.Push('(');
-                            }
-                            else if (locked[i] == '1')
-                            {
-                                isValid = false;
-                            }
-                        }
-                    }
+                    --balance;
                 }
-            }
 
-            if (isValid)
-            {
-                return true;
-            }
-            else
-            {
-                parentheses.Clear();
-            }
-
-            for (int i = s.Length - 1; i >= 0; --i)
-            {
-                if (s[i] == ')')
+                if (balance < 0 && locked[i] == '0')
                 {
-                    parentheses.Push(s[i]);
+                    ++balance;
                 }
-                else if (s[i] == '(')
+                else if (balance < 0 && locked[i] == '1' && unlocked > 0)
                 {
-                    if (parentheses.TryPeek(out char item))
-                    {
-                        if (item == ')')
-                        {
-                            parentheses.Pop();
-                            isValid = true;
-                        }
-                    }
-                    else
-                    {
-                        if (s[i] == '(')
-                        {
-                            if (locked[i] == '0')
-                            {
-                                parentheses.Push(')');
-                            }
-                            else if (locked[i] == '1')
-                            {
-                                return false;
-                            }
-                        }
-                    }
+                    --unlocked;
+                    ++balance;
+                }
+
+                if (locked[i] == '0')
+                {
+                    ++unlocked;
                 }
             }
 
-            return isValid;
+            return unlocked >= balance;
         }
     }
 }
