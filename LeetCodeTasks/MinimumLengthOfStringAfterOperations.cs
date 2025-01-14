@@ -37,6 +37,10 @@ namespace LeetCodeTasks
                     {
                         chars[node.Previous.Value] = '-';
                         chars[node.Next.Value] = '-';
+
+                        letterIndexes[index].Remove(node.Previous);
+                        letterIndexes[index].Remove(node.Next);
+
                         answerLength = answerLength - 2;
                     }
                 }
