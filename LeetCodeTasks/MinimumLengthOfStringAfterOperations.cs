@@ -22,12 +22,15 @@ namespace LeetCodeTasks
             // solution
             for (int i = 0; i < lettersFreq.Length; ++i)
             {
-                if (lettersFreq[i] >= 3)
+                if (lettersFreq[i] > 0)
                 {
-                    while (lettersFreq[i] > 2)
+                    if (lettersFreq[i] % 2 == 1)
                     {
-                        lettersFreq[i] = lettersFreq[i] - 2;
-                        answerLength = answerLength - 2;
+                        answerLength = answerLength - (lettersFreq[i] - 1);
+                    }
+                    else
+                    {
+                        answerLength = answerLength - (lettersFreq[i] - 2);
                     }
                 }
             }
