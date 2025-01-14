@@ -8,8 +8,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int res = MinimumLengthOfStringAfterOperations.SolveAfterHints("abaacbcbb");
-            Console.WriteLine(res);
+            var res = FindThePrefixCommonArrayOfTwoArrays.Solve([1,2,3,4,5,6,7,8,9], [5,6,9,1,8,3,7,2,4]);
+            Array.ForEach(res, Console.WriteLine);
         }
     }
 }

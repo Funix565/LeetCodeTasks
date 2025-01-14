@@ -40,3 +40,4 @@
 | [2116. Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/) | 10 ms | 61.1 MB | Solved with Editorial help
 | [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/) | 249 ms | 74.6 MB | Kind of simulation approach with array of LinkedLists - result of overthinking and direct execution of the task in Description
 | [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/) | 4 ms | 49.6 MB | Frequency approach using LeetCode hints
+| [2657. Find the Prefix Common Array of Two Arrays](https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/) | 12 ms | 61.4 MB | Chatgpt hinted on data structure to use - Set
