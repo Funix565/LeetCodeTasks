@@ -37,3 +37,6 @@
 | [2185. Counting Words With a Given Prefix](https://leetcode.com/problems/counting-words-with-a-given-prefix/) | 0 ms | 43.4 MB
 | [916. Word Subsets](https://leetcode.com/problems/word-subsets/) | 21 ms | 70.2 MB
 | [1400. Construct K Palindrome Strings](https://leetcode.com/problems/construct-k-palindrome-strings/) | 1 ms | 48.3 MB | Solved using LeetCode hints
+| [2116. Check if a Parentheses String Can Be Valid](https://leetcode.com/problems/check-if-a-parentheses-string-can-be-valid/) | 10 ms | 61.1 MB | Solved with Editorial help
+| [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/) | 249 ms | 74.6 MB | Kind of simulation approach with array of LinkedLists - result of overthinking and direct execution of the task in Description
+| [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/) | 6 ms | 49.4 MB | Frequency approach using LeetCode hints

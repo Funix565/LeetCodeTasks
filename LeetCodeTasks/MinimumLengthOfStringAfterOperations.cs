@@ -6,6 +6,35 @@ namespace LeetCodeTasks
 
     public class MinimumLengthOfStringAfterOperations
     {
+        public static int SolveAfterHints(string s)
+        {
+            int answerLength = s.Length;
+
+            int[] lettersFreq = new int[26];
+
+            // preparation
+            for (int i = 0; i < s.Length; ++i)
+            {
+                int index = s[i] - 'a';
+                lettersFreq[index] = lettersFreq[index] + 1;
+            }
+
+            // solution
+            for (int i = 0; i < lettersFreq.Length; ++i)
+            {
+                if (lettersFreq[i] >= 3)
+                {
+                    while (lettersFreq[i] > 2)
+                    {
+                        lettersFreq[i] = lettersFreq[i] - 2;
+                        answerLength = answerLength - 2;
+                    }
+                }
+            }
+
+            return answerLength;
+        }
+
         public static int Solve(string s)
         {
             int answerLength = s.Length;

@@ -8,7 +8,7 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            int res = MinimumLengthOfStringAfterOperations.Solve("aa");
+            int res = MinimumLengthOfStringAfterOperations.SolveAfterHints("abaacbcbb");
             Console.WriteLine(res);
         }
     }
