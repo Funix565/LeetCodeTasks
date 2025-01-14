@@ -8,8 +8,8 @@ namespace LeetCodeTasks
     {
         static void Main(string[] args)
         {
-            bool answer = CheckIfParenthesesStringCanBeValid.Solve("()((()))()()))((())(", "10010101001111010100");
-            Console.WriteLine(answer);
+            int res = MinimumLengthOfStringAfterOperations.Solve("aa");
+            Console.WriteLine(res);
         }
     }
 }
