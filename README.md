@@ -42,3 +42,4 @@
 | [3223. Minimum Length of String After Operations](https://leetcode.com/problems/minimum-length-of-string-after-operations/) | 4 ms | 49.6 MB | Frequency approach using LeetCode hints
 | [2657. Find the Prefix Common Array of Two Arrays](https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/) | 12 ms | 61.4 MB | Chatgpt hinted on data structure to use - Set
 | [2657. Find the Prefix Common Array of Two Arrays](https://leetcode.com/problems/find-the-prefix-common-array-of-two-arrays/) | 2 ms | 61.3 MB | Approach with frequency array of size 50 since constraints are small, no need to use collection
+| [2429. Minimize XOR](https://leetcode.com/problems/minimize-xor/) | 0 ms | 28.5 MB | Solved after 3 hours, discussed with chatgpt, confirmed shifting is needed, implemented totally myself
