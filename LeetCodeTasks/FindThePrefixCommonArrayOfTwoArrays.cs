@@ -10,30 +10,32 @@ namespace LeetCodeTasks
         {
             List<int> answer = new List<int>();
 
-            HashSet<int> visitedElements = new HashSet<int>(A.Length);
+            int[] visitedElements = new int[A.Length + 1];
 
             int count = 0;
             for (int i = 0; i < A.Length; ++i)
             {
-                if (A[i] == B[i])
-                {
-                    ++count;
-                }
+                ++visitedElements[A[i]];
+                ++visitedElements[B[i]];
 
-                if (visitedElements.Contains(A[i]))
+                if (A[i] != B[i])
                 {
-                    ++count;
+                    if (visitedElements[A[i]] == 2)
+                    {
+                        ++count;
+                    }
+
+                    if (visitedElements[B[i]] == 2)
+                    {
+                        ++count;
+                    }
                 }
-                
-                if (visitedElements.Contains(B[i]))
+                else
                 {
                     ++count;
                 }
 
                 answer.Add(count);
-
-                visitedElements.Add(A[i]);
-                visitedElements.Add(B[i]);
             }
 
             return answer.ToArray();
