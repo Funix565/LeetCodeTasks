@@ -74,5 +74,34 @@
 
             return num1;
         }
+
+        // Helper function to check if the given bit position in x is set (1).
+        private bool IsSet(int x, int bit)
+        {
+            // 1 & 1 = 1, else 0
+            // mask 0001000
+            // 010_0_010 & 000_1_000 - gives 000_0_000 = 0, bit unset
+            // 010_1_010 & 000_1_000 - gives 000_1_000 != 0, bit set
+            return (x & (1 << bit)) != 0;
+        }
+
+        // Helper function to set the given bit position in x to 1.
+        private int SetBit(int x, int bit)
+        {
+            // any | 1 = 1
+            // 0 | 0 = 0
+            // mask 000_1_000
+            // 010_0_010 | 000_1_000 - gives 010_1_010
+            return x | (1 << bit);
+        }
+
+        // Helper function to unset the given bit position in x (set it to 0).
+        private int UnsetBit(int x, int bit)
+        {
+            // ~0000000 = 1111111
+            // mask 000_1_000, ~000_1_000 = 111_0_111
+            // 010_1_010 & 111_0_111 - gives 010_0_010
+            return x & ~(1 << bit);
+        }
     }
 }
