@@ -50,3 +50,4 @@
 | [1800. Maximum Ascending Subarray Sum](https://leetcode.com/problems/maximum-ascending-subarray-sum/) | 0 ms | 41.4 MB | Linear Scan approach
 | [1790. Check if One String Swap Can Make Strings Equal](https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/) | 0 ms | 41.2 MB | This was not easy. Discussed with ChatGPT, used LeetCode hints
 | [1726. Tuple with Same Product](https://leetcode.com/problems/tuple-with-same-product/) | 229 ms | 76.9 MB | Store products in Dictionary, answer = answer + 8 * (value * (value - 1) / 2);
+| [3160. Find the Number of Distinct Colors Among the Balls](https://leetcode.com/problems/find-the-number-of-distinct-colors-among-the-balls/) | 23 ms | 102.5 MB | Initially used two maps but couldn't handle re-coloring and decreasing distinct. Solved using Editorial
