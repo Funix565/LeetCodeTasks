@@ -49,3 +49,4 @@
 | [1752. Check if Array Is Sorted and Rotated](https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/) | 0 ms | 43.7 MB | The idea is to determine rotation split. This means we found a theoretical start and end of the sorted array. This means that all values after rotation split must maintain non-decreasing order AND ALSO be less than or equal the nums[0], i.e. min number of the left sorted half.
 | [1800. Maximum Ascending Subarray Sum](https://leetcode.com/problems/maximum-ascending-subarray-sum/) | 0 ms | 41.4 MB | Linear Scan approach
 | [1790. Check if One String Swap Can Make Strings Equal](https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/) | 0 ms | 41.2 MB | This was not easy. Discussed with ChatGPT, used LeetCode hints
+| [1726. Tuple with Same Product](https://leetcode.com/problems/tuple-with-same-product/) | 229 ms | 76.9 MB | Store products in Dictionary, answer = answer + 8 * (value * (value - 1) / 2);
