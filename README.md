@@ -51,3 +51,4 @@
 | [1790. Check if One String Swap Can Make Strings Equal](https://leetcode.com/problems/check-if-one-string-swap-can-make-strings-equal/) | 0 ms | 41.2 MB | This was not easy. Discussed with ChatGPT, used LeetCode hints
 | [1726. Tuple with Same Product](https://leetcode.com/problems/tuple-with-same-product/) | 229 ms | 76.9 MB | Store products in Dictionary, answer = answer + 8 * (value * (value - 1) / 2);
 | [3160. Find the Number of Distinct Colors Among the Balls](https://leetcode.com/problems/find-the-number-of-distinct-colors-among-the-balls/) | 23 ms | 102.5 MB | Initially used two maps but couldn't handle re-coloring and decreasing distinct. Solved using Editorial
+| [2349. Design a Number Container System](https://leetcode.com/problems/design-a-number-container-system/) | 257 ms | 176.4 MB | Dictionary for inserting and replacing by index, Dictionary with SortedList to maintain sorted indexes and be able to return the smallest index by number.
