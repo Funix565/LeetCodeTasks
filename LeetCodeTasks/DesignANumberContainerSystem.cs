@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCodeTasks
 {
@@ -7,12 +8,12 @@ namespace LeetCodeTasks
     public class DesignANumberContainerSystem
     {
         private Dictionary<int, int> _byIndex;
-        private Dictionary<int, SortedList<int, int>> _byNumber;
+        private Dictionary<int, LinkedList<int>> _byNumber;
 
         public DesignANumberContainerSystem()
         {
             _byIndex = new Dictionary<int, int>();
-            _byNumber = new Dictionary<int, SortedList<int, int>>();
+            _byNumber = new Dictionary<int, LinkedList<int>>();
         }
 
         public void Change(int index, int number)
@@ -31,29 +32,48 @@ namespace LeetCodeTasks
             _byIndex[index] = number;
 
             // maintain indexes for number
-            if (!_byNumber.TryGetValue(number, out SortedList<int, int> indexes))
+            if (!_byNumber.TryGetValue(number, out LinkedList<int> indexes))
             {
-                SortedList<int, int> numberIndexes = new SortedList<int, int>();
-                numberIndexes.Add(index, index);
+                LinkedList<int> numberIndexes = new LinkedList<int>();
+                numberIndexes.AddLast(index);
                 _byNumber[number] = numberIndexes;
+
+                // -1 means NOT SORTED
+                numberIndexes.AddFirst(-1);
             }
             else
             {
-                _byNumber[number].Add(index, index);
+                _byNumber[number].AddLast(index);
+
+                // -1 means NOT SORTED
+                _byNumber[number].First.Value = -1;
             }
         }
 
         public int Find(int number)
         {
-            if (_byNumber.TryGetValue(number, out SortedList<int, int> sortedIndexes))
+            if (_byNumber.TryGetValue(number, out LinkedList<int> indexes))
             {
-                if (sortedIndexes.Keys.Count == 0)
+                if (indexes.Count <= 1)
                 {
                     return -1;
                 }
                 else
                 {
-                    return sortedIndexes.Keys[0];
+                    if (_byNumber[number].First.Value == -1)
+                    {
+                        int[] iArray = new int[indexes.Count];
+                        indexes.CopyTo(iArray, 0);
+                        Array.Sort(iArray);
+                        indexes = new LinkedList<int>(iArray);
+
+                        // -2 means SORTED
+                        indexes.First.Value = -2;
+
+                        _byNumber[number] = indexes;
+                    }
+
+                    return indexes.First.Next.Value;
                 }
             }
             else
