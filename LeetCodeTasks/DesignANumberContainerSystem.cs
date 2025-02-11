@@ -135,4 +135,67 @@ namespace LeetCodeTasks
 
     }
 
+    public class DesignANumberContainerSystem_Editorial_MinHeapPriorityQueueWithLazyUpdate
+    {
+        private Dictionary<int, PriorityQueue<int, int>> _numberToIndexes;
+        private Dictionary<int, int> _indexToNumbers;
+
+        public DesignANumberContainerSystem_Editorial_MinHeapPriorityQueueWithLazyUpdate()
+        {
+            _numberToIndexes = new Dictionary<int, PriorityQueue<int, int>>();
+            _indexToNumbers = new Dictionary<int, int>();
+        }
+
+        public void Change(int index, int number)
+        {
+            // Update index to number mapping
+            _indexToNumbers[index] = number;
+
+            if (!_numberToIndexes.TryGetValue(number, out PriorityQueue<int, int> value))
+            {
+                _numberToIndexes[number] = new PriorityQueue<int, int>();
+            }
+
+            // Add index to the PQ for this number
+            _numberToIndexes[number].Enqueue(index, index);
+        }
+
+        // The term "lazy" refers to the deferred handling of index validity during the `find` operation,
+        // rather than cleaning up indices immediately after a change.
+        // If the number doesn't exist, we return -1.
+        // If the number does exist, we retrieve the PQ for that number. At this point, we do not assume that the top element of the PQ is necessarily valid.
+        // The PQ may contain stale indices that are no longer associated with the target number.
+        // Instead of removing them immediately, we lazily dequeue the top element of the PQ and check if it still maps to the target number using the _indexToNumbers dictionary.
+        // If it does, we return the index.
+        // If not, we continue dequeueing the PQ until we find a valid index or exhaust the PQ.
+        // This lazy way ensures that the PQ is only cleaned up when it's absolutely necessary, avoiding unnecessary operations during `change` method.
+        public int Find(int number)
+        {
+            // If number does not exists in map
+            if (!_numberToIndexes.ContainsKey(number))
+            {
+                return -1;
+            }
+
+            PriorityQueue<int, int> pq = _numberToIndexes[number];
+            while (pq.Count > 0)
+            {
+                // We can query the same number multiple times, and the minimal index for that number should be the same -- that's why Peek.
+                int possibleIndex = pq.Peek();
+                if (_indexToNumbers.TryGetValue(possibleIndex, out int possibleNumber))
+                {
+                    // If index maps to target, return index
+                    if (number == possibleNumber)
+                    {
+                        return possibleIndex;
+                    }
+                }
+
+                // Call Dequeue when index is stale.
+                pq.Dequeue();
+            }
+
+            return -1;
+        }
+    }
 }
