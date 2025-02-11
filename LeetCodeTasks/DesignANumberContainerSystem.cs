@@ -82,4 +82,57 @@ namespace LeetCodeTasks
             }
         }
     }
+
+    public class DesignANumberContainerSystem_Editorial_SortedSet
+    {
+        private Dictionary<int, SortedSet<int>> _numberToIndexes;
+        private Dictionary<int, int> _indexToNumbers;
+
+        public DesignANumberContainerSystem_Editorial_SortedSet()
+        {
+            _numberToIndexes = new Dictionary<int, SortedSet<int>>();
+            _indexToNumbers = new Dictionary<int, int>();
+        }
+
+        public void Change(int index, int number)
+        {
+            // If index already has a number, remove it from the old number's index set
+            if (_indexToNumbers.TryGetValue(index, out int value))
+            {
+                int oldNumber = value;
+                _numberToIndexes[oldNumber].Remove(index);
+
+                if (_numberToIndexes[oldNumber].Count == 0)
+                {
+                    _numberToIndexes.Remove(oldNumber);
+                }
+            }
+
+            // Update the number and add the index to the new number's set
+            _indexToNumbers[index] = number;
+
+            if (!_numberToIndexes.TryGetValue(number, out SortedSet<int> indexes))
+            {
+                indexes = new SortedSet<int>();
+                _numberToIndexes[number] = indexes;
+            }
+
+            _numberToIndexes[number].Add(index);
+        }
+
+        public int Find(int number)
+        {
+            if (_numberToIndexes.TryGetValue(number, out SortedSet<int> value))
+            {
+                // Get the minimum value in the SortedSet
+                return value.Min;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+    }
+
 }
